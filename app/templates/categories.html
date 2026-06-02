@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}{{ _('Categories') }} — {{ _('Expense Manager') }}{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div>
+        <h1>{{ _('Categories') }}</h1>
+        <p class="subtitle">{{ _('Organize your expenses with custom labels') }}</p>
+    </div>
+</div>
+
+<div class="card">
+    <h2>{{ _('Add category') }}</h2>
+    <form method="POST" action="{{ url_for('categories.add_category') }}"
+          class="form form-grid" data-loading>
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+        <div class="form-group">
+            <label for="name">{{ _('Name') }}</label>
+            <input type="text" id="name" name="name" required placeholder="{{ _('e.g. Subscriptions') }}">
+        </div>
+
+        <div class="form-group">
+            <label for="color">{{ _('Color') }}</label>
+            <input type="color" id="color" name="color" value="#3B82F6">
+        </div>
+
+        <div class="form-group">
+            <label for="icon">{{ _('Icon (emoji)') }}</label>
+            <input type="text" id="icon" name="icon" value="📁" maxlength="4" placeholder="📁">
+        </div>
+
+        <div class="form-group filter-actions">
+            <button type="submit" class="btn btn-primary">{{ _('Add category') }}</button>
+        </div>
+    </form>
+</div>
+
+<div class="card">
+    <h2>{{ _('Your categories') }}</h2>
+    {% if categories %}
+        <div class="category-grid">
+            {% for cat in categories %}
+            <div class="category-item" style="--cat-color: {{ cat.color or '#3B82F6' }}">
+                <span class="category-icon">{{ cat.icon or '📁' }}</span>
+                <span class="category-name">{{ translate_category(cat.name) }}</span>
+                {% if cat.name != 'Other' %}
+                <form method="POST"
+                      action="{{ url_for('categories.delete_category', category_id=cat.id) }}"
+                      data-confirm="{{ _('Delete \"%(name)s\"? Expenses will be moved to Other.') % {'name': translate_category(cat.name)} }}">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    <button type="submit" class="btn btn-danger btn-sm">{{ _('Delete') }}</button>
+                </form>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="empty-state">
+            <div class="empty-state-icon">🏷️</div>
+            <h3 class="empty-state-title">{{ _('No categories yet') }}</h3>
+            <p class="empty-state-desc">{{ _('Default categories are created when you register. You can add custom ones above.') }}</p>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

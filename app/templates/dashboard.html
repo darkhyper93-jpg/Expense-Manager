@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% block title %}{{ _('Dashboard') }} — {{ _('Expense Manager') }}{% endblock %}
+
+{% block head %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div>
+        <h1>{{ _('Dashboard') }}</h1>
+        <p class="subtitle">{{ _('Your spending overview') }}</p>
+    </div>
+</div>
+
+<div class="stats-grid">
+    <div class="stat-card">
+        <span class="stat-label">{{ _('Total spent this month') }}</span>
+        <span class="stat-value">${{ "%.2f"|format(month_total) }}</span>
+    </div>
+    <div class="stat-card">
+        <span class="stat-label">{{ _('Total spent this year') }}</span>
+        <span class="stat-value">${{ "%.2f"|format(year_total) }}</span>
+    </div>
+    <div class="stat-card {% if budget_status == 'warning' %}stat-warning{% elif budget_status == 'exceeded' %}stat-danger{% endif %}">
+        <span class="stat-label">{{ _('Remaining budget') }}</span>
+        {% if remaining_budget is not none %}
+            <span class="stat-value">${{ "%.2f"|format(remaining_budget) }}</span>
+        {% else %}
+            <span class="stat-value stat-muted">{{ _('Not set') }}</span>
+        {% endif %}
+    </div>
+</div>
+
+<div class="charts-grid">
+    <div class="card">
+        <h2>{{ _('Last 6 months') }}</h2>
+        {% if bar_values and bar_values|sum > 0 %}
+            <div class="chart-wrapper" id="barChartWrapper">
+                <div class="chart-skeleton" aria-hidden="true">
+                    <div class="skeleton skeleton-bar"></div>
+                    <div class="skeleton skeleton-bar"></div>
+                    <div class="skeleton skeleton-bar"></div>
+                    <div class="skeleton skeleton-bar"></div>
+                    <div class="skeleton skeleton-bar"></div>
+                </div>
+                <canvas id="barChart"></canvas>
+            </div>
+        {% else %}
+            <div class="empty-state">
+                <div class="empty-state-icon">📊</div>
+                <h3 class="empty-state-title">{{ _('No spending data yet') }}</h3>
+                <p class="empty-state-desc">{{ _('Add expenses to see your monthly trends visualized here.') }}</p>
+                <a href="{{ url_for('expenses.add_expense') }}" class="btn btn-primary">{{ _('Add expense') }}</a>
+            </div>
+        {% endif %}
+    </div>
+    <div class="card">
+        <h2>{{ _('By category (this month)') }}</h2>
+        {% if pie_values and pie_values|sum > 0 %}
+            <div class="chart-wrapper" id="pieChartWrapper">
+                <div class="chart-skeleton" aria-hidden="true">
+                    <div class="skeleton skeleton-circle"></div>
+                </div>
+                <canvas id="pieChart"></canvas>
+            </div>
+        {% else %}
+            <div class="empty-state">
+                <div class="empty-state-icon">🥧</div>
+                <h3 class="empty-state-title">{{ _('No category breakdown') }}</h3>
+                <p class="empty-state-desc">{{ _('Expenses this month will appear grouped by category.') }}</p>
+                <a href="{{ url_for('expenses.add_expense') }}" class="btn btn-primary">{{ _('Add expense') }}</a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h2>{{ _('Recent transactions') }}</h2>
+        <a href="{{ url_for('expenses.list_expenses') }}" class="btn btn-secondary btn-sm">{{ _('View all') }}</a>
+    </div>
+    {% if recent_expenses %}
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>{{ _('Date') }}</th>
+                        <th>{{ _('Category') }}</th>
+                        <th>{{ _('Description') }}</th>
+                        <th class="text-right">{{ _('Amount') }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for exp in recent_expenses %}
+                    <tr>
+                        <td>{{ exp.date }}</td>
+                        <td><span class="badge">{{ translate_category(exp.category) }}</span></td>
+                        <td>{{ exp.description or '—' }}</td>
+                        <td class="text-right amount">${{ "%.2f"|format(exp.amount) }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <div class="empty-state">
+            <div class="empty-state-icon">📝</div>
+            <h3 class="empty-state-title">{{ _('No transactions yet') }}</h3>
+            <p class="empty-state-desc">{{ _('Your latest expenses will show up here once you start tracking.') }}</p>
+            <a href="{{ url_for('expenses.add_expense') }}" class="btn btn-primary">{{ _('Add your first expense') }}</a>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+<script>
+    initDashboardCharts(
+        {{ bar_labels | tojson }},
+        {{ bar_values | tojson }},
+        {{ pie_labels | tojson }},
+        {{ pie_values | tojson }},
+        {{ _('Spending') | tojson }}
+    );
+</script>
+{% endblock %}

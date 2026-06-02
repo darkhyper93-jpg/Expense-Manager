@@ -1,0 +1,910 @@
+# Spanish translations for PROJECT.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-06-02 19:41-0300\n"
+"PO-Revision-Date: 2026-06-02 19:08-0300\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: app/i18n.py:69
+msgid "Food"
+msgstr "Comida"
+
+#: app/i18n.py:70
+msgid "Transport"
+msgstr "Transporte"
+
+#: app/i18n.py:71
+msgid "Entertainment"
+msgstr "Entretenimiento"
+
+#: app/i18n.py:72
+msgid "Health"
+msgstr "Salud"
+
+#: app/i18n.py:73
+msgid "Education"
+msgstr "Educación"
+
+#: app/i18n.py:74
+msgid "Other"
+msgstr "Otros"
+
+#: app/i18n.py:82 app/routes/budget.py:134
+msgid "Global"
+msgstr "Global"
+
+#: app/utils.py:65
+msgid "Amount must be greater than zero."
+msgstr "El monto debe ser mayor que cero."
+
+#: app/utils.py:68
+msgid "Invalid amount."
+msgstr "Monto no válido."
+
+#: app/routes/expenses.py:249 app/templates/dashboard.html:89
+#: app/templates/expenses.html:30 app/templates/expenses.html:74
+#: app/templates/expenses.html:111 app/utils.py:76
+msgid "Category"
+msgstr "Categoría"
+
+#: app/templates/categories.html:19 app/utils.py:77
+msgid "Name"
+msgstr "Nombre"
+
+#: app/utils.py:80
+#, python-format
+msgid "%(field)s is required."
+msgstr "%(field)s es obligatorio."
+
+#: app/routes/auth.py:23 app/routes/auth.py:62
+msgid "Email and password are required."
+msgstr "El correo y la contraseña son obligatorios."
+
+#: app/routes/auth.py:34
+msgid "Invalid credentials."
+msgstr "Credenciales no válidas."
+
+#: app/routes/auth.py:41
+msgid "Welcome back!"
+msgstr "¡Bienvenido de nuevo!"
+
+#: app/routes/auth.py:45
+#, python-format
+msgid "Login failed: %(error)s"
+msgstr "Error al iniciar sesión: %(error)s"
+
+#: app/routes/auth.py:66
+msgid "Password must be at least 6 characters."
+msgstr "La contraseña debe tener al menos 6 caracteres."
+
+#: app/routes/auth.py:70
+msgid "Passwords do not match."
+msgstr "Las contraseñas no coinciden."
+
+#: app/routes/auth.py:81
+msgid "Registration failed. Please try again."
+msgstr "Error en el registro. Inténtalo de nuevo."
+
+#: app/routes/auth.py:92
+msgid "Account created successfully!"
+msgstr "¡Cuenta creada con éxito!"
+
+#: app/routes/auth.py:96
+#, python-format
+msgid "Registration failed: %(error)s"
+msgstr "Error en el registro: %(error)s"
+
+#: app/routes/auth.py:108
+msgid "You have been logged out."
+msgstr "Has cerrado sesión."
+
+#: app/routes/budget.py:135
+#, python-format
+msgid "Budget for %(label)s saved."
+msgstr "Presupuesto de %(label)s guardado."
+
+#: app/routes/budget.py:137
+#, python-format
+msgid "Failed to save budget: %(error)s"
+msgstr "Error al guardar el presupuesto: %(error)s"
+
+#: app/routes/budget.py:152
+msgid "Budget removed."
+msgstr "Presupuesto eliminado."
+
+#: app/routes/budget.py:154
+#, python-format
+msgid "Failed to delete budget: %(error)s"
+msgstr "Error al eliminar el presupuesto: %(error)s"
+
+#: app/routes/categories.py:54
+msgid "Category created."
+msgstr "Categoría creada."
+
+#: app/routes/categories.py:56
+#, python-format
+msgid "Failed to create category: %(error)s"
+msgstr "Error al crear la categoría: %(error)s"
+
+#: app/routes/categories.py:77
+msgid "Category not found."
+msgstr "Categoría no encontrada."
+
+#: app/routes/categories.py:82
+msgid "Cannot delete the Other category."
+msgstr "No se puede eliminar la categoría Otros."
+
+#: app/routes/categories.py:113
+#, python-format
+msgid "Category \"%(name)s\" deleted. Expenses moved to Other."
+msgstr "Categoría \"%(name)s\" eliminada. Los gastos se movieron a Otros."
+
+#: app/routes/categories.py:118
+#, python-format
+msgid "Failed to delete category: %(error)s"
+msgstr "Error al eliminar la categoría: %(error)s"
+
+#: app/routes/expenses.py:123 app/routes/expenses.py:177
+msgid "Date is required."
+msgstr "La fecha es obligatoria."
+
+#: app/routes/expenses.py:135
+msgid "Expense added."
+msgstr "Gasto añadido."
+
+#: app/routes/expenses.py:138 app/routes/expenses.py:191
+msgid "Invalid date format."
+msgstr "Formato de fecha no válido."
+
+#: app/routes/expenses.py:140
+#, python-format
+msgid "Failed to add expense: %(error)s"
+msgstr "Error al añadir el gasto: %(error)s"
+
+#: app/routes/expenses.py:159
+msgid "Expense not found."
+msgstr "Gasto no encontrado."
+
+#: app/routes/expenses.py:188
+msgid "Expense updated."
+msgstr "Gasto actualizado."
+
+#: app/routes/expenses.py:193
+#, python-format
+msgid "Failed to update expense: %(error)s"
+msgstr "Error al actualizar el gasto: %(error)s"
+
+#: app/routes/expenses.py:215
+msgid "Expense deleted."
+msgstr "Gasto eliminado."
+
+#: app/routes/expenses.py:217
+#, python-format
+msgid "Failed to delete expense: %(error)s"
+msgstr "Error al eliminar el gasto: %(error)s"
+
+#: app/routes/expenses.py:249 app/templates/dashboard.html:88
+#: app/templates/expenses.html:43 app/templates/expenses.html:110
+msgid "Date"
+msgstr "Fecha"
+
+#: app/routes/expenses.py:249 app/templates/dashboard.html:90
+#: app/templates/expenses.html:49 app/templates/expenses.html:112
+msgid "Description"
+msgstr "Descripción"
+
+#: app/routes/expenses.py:249 app/templates/dashboard.html:91
+#: app/templates/expenses.html:24 app/templates/expenses.html:113
+msgid "Amount"
+msgstr "Monto"
+
+#: app/templates/_language_selector.html:7
+msgid "Select language"
+msgstr "Seleccionar idioma"
+
+#: app/templates/base.html:6 app/templates/base.html:16
+#: app/templates/base.html:57 app/templates/budget.html:2
+#: app/templates/categories.html:2 app/templates/dashboard.html:2
+#: app/templates/expenses.html:2 app/templates/login.html:2
+#: app/templates/login.html:8 app/templates/privacy.html:2
+#: app/templates/register.html:2 app/templates/register.html:8
+#: app/templates/terms.html:2
+msgid "Expense Manager"
+msgstr "Gestor de Gastos"
+
+#: app/templates/base.html:17
+msgid "Toggle menu"
+msgstr "Alternar menú"
+
+#: app/templates/base.html:19 app/templates/dashboard.html:2
+#: app/templates/dashboard.html:11
+msgid "Dashboard"
+msgstr "Panel"
+
+#: app/templates/base.html:20 app/templates/expenses.html:2
+#: app/templates/expenses.html:7
+msgid "Expenses"
+msgstr "Gastos"
+
+#: app/templates/base.html:21 app/templates/categories.html:2
+#: app/templates/categories.html:7
+msgid "Categories"
+msgstr "Categorías"
+
+#: app/templates/base.html:22 app/templates/budget.html:2
+#: app/templates/budget.html:7
+msgid "Budget"
+msgstr "Presupuesto"
+
+#: app/templates/base.html:23
+msgid "Logout"
+msgstr "Cerrar sesión"
+
+#: app/templates/base.html:45
+msgid "Dismiss"
+msgstr "Cerrar"
+
+#: app/templates/base.html:58
+#, fuzzy
+msgid "Legal"
+msgstr "Legal"
+
+#: app/templates/base.html:59 app/templates/privacy.html:2
+#: app/templates/privacy.html:8
+msgid "Privacy Policy"
+msgstr "Política de Privacidad"
+
+#: app/templates/base.html:60 app/templates/terms.html:2
+#: app/templates/terms.html:8
+msgid "Terms of Service"
+msgstr "Términos de Servicio"
+
+#: app/templates/budget.html:8
+msgid "Set monthly spending limits and track progress"
+msgstr "Establece límites mensuales y sigue tu progreso"
+
+#: app/templates/budget.html:13
+msgid "Set budget"
+msgstr "Configurar presupuesto"
+
+#: app/templates/budget.html:19
+msgid "Scope"
+msgstr "Ámbito"
+
+#: app/templates/budget.html:21
+msgid "Global (all expenses)"
+msgstr "Global (todos los gastos)"
+
+#: app/templates/budget.html:29
+msgid "Monthly limit ($)"
+msgstr "Límite mensual ($)"
+
+#: app/templates/budget.html:35
+msgid "Save budget"
+msgstr "Guardar presupuesto"
+
+#: app/templates/budget.html:41
+msgid "Current budgets"
+msgstr "Presupuestos actuales"
+
+#: app/templates/budget.html:58
+#, python-format
+msgid "Over budget by $%(amount)s"
+msgstr "Superado en $%(amount)s"
+
+#: app/templates/budget.html:60
+#, python-format
+msgid "%(pct)s%% used — approaching limit"
+msgstr "%(pct)s%% usado — acercándose al límite"
+
+#: app/templates/budget.html:62
+#, python-format
+msgid "$%(amount)s remaining"
+msgstr "$%(amount)s restantes"
+
+#: app/templates/budget.html:67
+msgid "Remove this budget?"
+msgstr "¿Eliminar este presupuesto?"
+
+#: app/templates/budget.html:69
+msgid "Remove"
+msgstr "Eliminar"
+
+#: app/templates/budget.html:78
+msgid "No budgets configured"
+msgstr "No hay presupuestos configurados"
+
+#: app/templates/budget.html:79
+msgid "Set a global or per-category monthly limit above to stay on track."
+msgstr ""
+"Establece un límite mensual global o por categoría arriba para mantenerte"
+" al día."
+
+#: app/templates/budget.html:85
+#, python-format
+msgid "Under 80%%"
+msgstr "Menos del 80%%"
+
+#: app/templates/budget.html:86
+#, python-format
+msgid "80–100%%"
+msgstr "80–100%%"
+
+#: app/templates/budget.html:87
+#, python-format
+msgid "Over 100%%"
+msgstr "Más del 100%%"
+
+#: app/templates/categories.html:8
+msgid "Organize your expenses with custom labels"
+msgstr "Organiza tus gastos con etiquetas personalizadas"
+
+#: app/templates/categories.html:13 app/templates/categories.html:34
+msgid "Add category"
+msgstr "Añadir categoría"
+
+#: app/templates/categories.html:20
+msgid "e.g. Subscriptions"
+msgstr "ej. Suscripciones"
+
+#: app/templates/categories.html:24
+msgid "Color"
+msgstr "Color"
+
+#: app/templates/categories.html:29
+msgid "Icon (emoji)"
+msgstr "Icono (emoji)"
+
+#: app/templates/categories.html:40
+msgid "Your categories"
+msgstr "Tus categorías"
+
+#: app/templates/categories.html:50
+#, python-format
+msgid "Delete \"%(name)s\"? Expenses will be moved to Other."
+msgstr "¿Eliminar \"%(name)s\"? Los gastos se moverán a Otros."
+
+#: app/templates/categories.html:52 app/templates/expenses.html:132
+msgid "Delete"
+msgstr "Eliminar"
+
+#: app/templates/categories.html:61
+msgid "No categories yet"
+msgstr "Aún no hay categorías"
+
+#: app/templates/categories.html:62
+msgid ""
+"Default categories are created when you register. You can add custom ones"
+" above."
+msgstr ""
+"Las categorías predeterminadas se crean al registrarte. Puedes añadir "
+"personalizadas arriba."
+
+#: app/templates/dashboard.html:12
+msgid "Your spending overview"
+msgstr "Resumen de tus gastos"
+
+#: app/templates/dashboard.html:18
+msgid "Total spent this month"
+msgstr "Total gastado este mes"
+
+#: app/templates/dashboard.html:22
+msgid "Total spent this year"
+msgstr "Total gastado este año"
+
+#: app/templates/dashboard.html:26
+msgid "Remaining budget"
+msgstr "Presupuesto restante"
+
+#: app/templates/dashboard.html:30
+msgid "Not set"
+msgstr "Sin configurar"
+
+#: app/templates/dashboard.html:37
+msgid "Last 6 months"
+msgstr "Últimos 6 meses"
+
+#: app/templates/dashboard.html:52
+msgid "No spending data yet"
+msgstr "Aún no hay datos de gastos"
+
+#: app/templates/dashboard.html:53
+msgid "Add expenses to see your monthly trends visualized here."
+msgstr "Añade gastos para ver tus tendencias mensuales aquí."
+
+#: app/templates/dashboard.html:54 app/templates/dashboard.html:72
+#: app/templates/expenses.html:11 app/templates/expenses.html:145
+#: app/templates/expenses.html:151
+msgid "Add expense"
+msgstr "Añadir gasto"
+
+#: app/templates/dashboard.html:59
+msgid "By category (this month)"
+msgstr "Por categoría (este mes)"
+
+#: app/templates/dashboard.html:70
+msgid "No category breakdown"
+msgstr "Sin desglose por categoría"
+
+#: app/templates/dashboard.html:71
+msgid "Expenses this month will appear grouped by category."
+msgstr "Los gastos de este mes aparecerán agrupados por categoría."
+
+#: app/templates/dashboard.html:80
+msgid "Recent transactions"
+msgstr "Transacciones recientes"
+
+#: app/templates/dashboard.html:81
+msgid "View all"
+msgstr "Ver todo"
+
+#: app/templates/dashboard.html:109
+msgid "No transactions yet"
+msgstr "Aún no hay transacciones"
+
+#: app/templates/dashboard.html:110
+msgid "Your latest expenses will show up here once you start tracking."
+msgstr "Tus últimos gastos aparecerán aquí cuando empieces a registrar."
+
+#: app/templates/dashboard.html:111
+msgid "Add your first expense"
+msgstr "Añade tu primer gasto"
+
+#: app/templates/dashboard.html:125
+msgid "Spending"
+msgstr "Gastos"
+
+#: app/templates/expenses.html:8
+msgid "Track and manage your spending"
+msgstr "Controla y gestiona tus gastos"
+
+#: app/templates/expenses.html:17
+msgid "Edit expense"
+msgstr "Editar gasto"
+
+#: app/templates/expenses.html:17
+msgid "New expense"
+msgstr "Nuevo gasto"
+
+#: app/templates/expenses.html:32
+msgid "Select category"
+msgstr "Seleccionar categoría"
+
+#: app/templates/expenses.html:52
+msgid "Optional note"
+msgstr "Nota opcional"
+
+#: app/templates/expenses.html:57
+msgid "Update expense"
+msgstr "Actualizar gasto"
+
+#: app/templates/expenses.html:57
+msgid "Save expense"
+msgstr "Guardar gasto"
+
+#: app/templates/expenses.html:59
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: app/templates/expenses.html:66
+msgid "Filters"
+msgstr "Filtros"
+
+#: app/templates/expenses.html:69
+msgid "Search"
+msgstr "Buscar"
+
+#: app/templates/expenses.html:71
+msgid "Search description..."
+msgstr "Buscar en descripción..."
+
+#: app/templates/expenses.html:76
+msgid "All categories"
+msgstr "Todas las categorías"
+
+#: app/templates/expenses.html:86
+msgid "From"
+msgstr "Desde"
+
+#: app/templates/expenses.html:90
+msgid "To"
+msgstr "Hasta"
+
+#: app/templates/expenses.html:94
+msgid "Apply filters"
+msgstr "Aplicar filtros"
+
+#: app/templates/expenses.html:95
+msgid "Clear"
+msgstr "Limpiar"
+
+#: app/templates/expenses.html:100
+msgid "Export CSV"
+msgstr "Exportar CSV"
+
+#: app/templates/expenses.html:114
+msgid "Actions"
+msgstr "Acciones"
+
+#: app/templates/expenses.html:126
+msgid "Edit"
+msgstr "Editar"
+
+#: app/templates/expenses.html:130
+msgid "Delete this expense? This action cannot be undone."
+msgstr "¿Eliminar este gasto? Esta acción no se puede deshacer."
+
+#: app/templates/expenses.html:143
+msgid "No expenses found"
+msgstr "No se encontraron gastos"
+
+#: app/templates/expenses.html:144
+msgid "Try adjusting your filters, or add a new expense to get started."
+msgstr "Prueba ajustar los filtros o añade un nuevo gasto para empezar."
+
+#: app/templates/login.html:2
+msgid "Login"
+msgstr "Iniciar sesión"
+
+#: app/templates/login.html:11
+msgid "Welcome back"
+msgstr "Bienvenido de nuevo"
+
+#: app/templates/login.html:12
+msgid "Sign in to manage your expenses"
+msgstr "Inicia sesión para gestionar tus gastos"
+
+#: app/templates/login.html:18 app/templates/register.html:18
+msgid "Email"
+msgstr "Correo electrónico"
+
+#: app/templates/login.html:24 app/templates/register.html:24
+msgid "Password"
+msgstr "Contraseña"
+
+#: app/templates/login.html:29 app/templates/register.html:41
+msgid "Sign in"
+msgstr "Iniciar sesión"
+
+#: app/templates/login.html:33
+msgid "Don't have an account?"
+msgstr "¿No tienes cuenta?"
+
+#: app/templates/login.html:34
+msgid "Create one"
+msgstr "Crea una"
+
+#: app/templates/privacy.html:9 app/templates/terms.html:9
+msgid "Last updated: June 2, 2026"
+msgstr "Última actualización: 2 de junio de 2026"
+
+#: app/templates/privacy.html:13
+#, fuzzy
+msgid "Introduction"
+msgstr "Introducción"
+
+#: app/templates/privacy.html:14
+msgid ""
+"This Privacy Policy explains how Expense Manager collects, uses, stores, "
+"and protects your personal information when you use our expense tracking "
+"service."
+msgstr ""
+"Esta Política de Privacidad explica cómo Expense Manager recopila, "
+"utiliza, almacena y protege su información personal cuando utiliza "
+"nuestro servicio de seguimiento de gastos."
+
+#: app/templates/privacy.html:18
+msgid "Data We Collect"
+msgstr "Datos que recopilamos"
+
+#: app/templates/privacy.html:19
+msgid "When you use Expense Manager, we collect the following information:"
+msgstr "Cuando utiliza Expense Manager, recopilamos la siguiente información:"
+
+#: app/templates/privacy.html:21
+msgid ""
+"Account information: your email address, used for authentication and "
+"account identification."
+msgstr ""
+"Información de la cuenta: su dirección de correo electrónico, utilizada "
+"para la autenticación e identificación de la cuenta."
+
+#: app/templates/privacy.html:22
+msgid ""
+"Expense records: amounts, categories, descriptions, and dates of your "
+"financial transactions."
+msgstr ""
+"Registros de gastos: montos, categorías, descripciones y fechas de sus "
+"transacciones financieras."
+
+#: app/templates/privacy.html:23
+msgid ""
+"Custom categories: names, colors, and icons you create to organize your "
+"expenses."
+msgstr ""
+"Categorías personalizadas: nombres, colores e iconos que crea para "
+"organizar sus gastos."
+
+#: app/templates/privacy.html:24
+#, fuzzy
+msgid ""
+"Budget settings: monthly spending limits you configure for tracking "
+"purposes."
+msgstr ""
+"Configuración de presupuesto: límites de gasto mensuales que configure "
+"para fines de seguimiento."
+
+#: app/templates/privacy.html:29
+msgid "How We Store Your Data"
+msgstr "Cómo almacenamos sus datos"
+
+#: app/templates/privacy.html:30
+msgid ""
+"Your data is stored securely in Supabase, a cloud platform powered by "
+"PostgreSQL. All data is encrypted in transit using HTTPS and is logically"
+" isolated so each user can only access their own records."
+msgstr ""
+"Sus datos se almacenan de forma segura en Supabase, una plataforma en la "
+"nube impulsada por PostgreSQL. Todos los datos se cifran en tránsito "
+"mediante HTTPS y están lógicamente aislados para que cada usuario solo "
+"pueda acceder a sus propios registros."
+
+#: app/templates/privacy.html:34
+msgid "Data Sharing"
+msgstr "Compartición de datos"
+
+#: app/templates/privacy.html:35
+msgid ""
+"We do not sell, rent, or share your personal data with third parties for "
+"marketing or advertising purposes. Your expense data remains private and "
+"is used solely to provide the Expense Manager service to you."
+msgstr ""
+"No vendemos, alquilamos ni compartimos sus datos personales con terceros "
+"con fines de marketing o publicidad. Sus datos de gastos permanecen "
+"privados y se utilizan únicamente para prestarle el servicio Expense "
+"Manager."
+
+#: app/templates/privacy.html:39
+msgid "Your Rights and Data Deletion"
+msgstr "Sus derechos y eliminación de datos"
+
+#: app/templates/privacy.html:40
+msgid ""
+"You have the right to access, export, and delete your data at any time. "
+"You may delete your account and all associated data — including expenses,"
+" categories, and budget settings — by contacting us. Upon deletion, all "
+"your personal data will be permanently removed from our systems."
+msgstr ""
+"Tiene derecho a acceder, exportar y eliminar sus datos en cualquier "
+"momento. Puede eliminar su cuenta y todos los datos asociados — incluidos"
+" gastos, categorías y configuración de presupuesto — contactándonos. Tras"
+" la eliminación, todos sus datos personales se eliminarán permanentemente"
+" de nuestros sistemas."
+
+#: app/templates/privacy.html:44
+msgid "GDPR Compliance"
+msgstr "Cumplimiento del RGPD"
+
+#: app/templates/privacy.html:45
+msgid ""
+"If you are located in the European Economic Area, you have additional "
+"rights under the General Data Protection Regulation (GDPR), including:"
+msgstr ""
+"Si se encuentra en el Espacio Económico Europeo, tiene derechos "
+"adicionales conforme al Reglamento General de Protección de Datos (RGPD),"
+" incluidos:"
+
+#: app/templates/privacy.html:47
+msgid "The right to access your personal data."
+msgstr "El derecho de acceso a sus datos personales."
+
+#: app/templates/privacy.html:48
+msgid "The right to rectification of inaccurate data."
+msgstr "El derecho de rectificación de datos inexactos."
+
+#: app/templates/privacy.html:49
+msgid "The right to erasure (\"right to be forgotten\")."
+msgstr "El derecho de supresión («derecho al olvido»)."
+
+#: app/templates/privacy.html:50
+msgid "The right to data portability."
+msgstr "El derecho a la portabilidad de los datos."
+
+#: app/templates/privacy.html:51
+msgid "The right to restrict or object to processing."
+msgstr "El derecho a limitar u oponerse al tratamiento."
+
+#: app/templates/privacy.html:53
+msgid ""
+"We process your data based on your consent when you create an account and"
+" on the necessity of performing our service contract with you. We retain "
+"your data only for as long as your account is active."
+msgstr ""
+"Tratamos sus datos en base a su consentimiento al crear una cuenta y a la"
+" necesidad de ejecutar nuestro contrato de servicio con usted. "
+"Conservamos sus datos solo mientras su cuenta esté activa."
+
+#: app/templates/privacy.html:57 app/templates/terms.html:50
+msgid "Contact Us"
+msgstr "Contáctenos"
+
+#: app/templates/privacy.html:58
+msgid ""
+"If you have questions about this Privacy Policy or wish to exercise your "
+"data rights, please contact us through the support channels provided in "
+"the application."
+msgstr ""
+"Si tiene preguntas sobre esta Política de Privacidad o desea ejercer sus "
+"derechos sobre los datos, contáctenos a través de los canales de soporte "
+"proporcionados en la aplicación."
+
+#: app/templates/register.html:2
+msgid "Register"
+msgstr "Registrarse"
+
+#: app/templates/register.html:11 app/templates/register.html:36
+msgid "Create account"
+msgstr "Crear cuenta"
+
+#: app/templates/register.html:12
+msgid "Start tracking your spending today"
+msgstr "Empieza a controlar tus gastos hoy"
+
+#: app/templates/register.html:27
+msgid "Min. 6 characters"
+msgstr "Mín. 6 caracteres"
+
+#: app/templates/register.html:31
+msgid "Confirm password"
+msgstr "Confirmar contraseña"
+
+#: app/templates/register.html:40
+msgid "Already have an account?"
+msgstr "¿Ya tienes cuenta?"
+
+#: app/templates/terms.html:13
+msgid "Acceptance of Terms"
+msgstr "Aceptación de los términos"
+
+#: app/templates/terms.html:14
+msgid ""
+"By creating an account or using Expense Manager, you agree to these Terms"
+" of Service. If you do not agree, please do not use the service."
+msgstr ""
+"Al crear una cuenta o utilizar Expense Manager, acepta estos Términos de "
+"Servicio. Si no está de acuerdo, no utilice el servicio."
+
+#: app/templates/terms.html:18
+msgid "Service Provided As-Is"
+msgstr "Servicio proporcionado «tal cual»"
+
+#: app/templates/terms.html:19
+msgid ""
+"Expense Manager is provided \"as is\" and \"as available\" without "
+"warranties of any kind, whether express or implied. We do not guarantee "
+"that the service will be uninterrupted, error-free, or meet your specific"
+" requirements. Use of the service is at your own risk."
+msgstr ""
+"Expense Manager se proporciona «tal cual» y «según disponibilidad» sin "
+"garantías de ningún tipo, expresas o implícitas. No garantizamos que el "
+"servicio sea ininterrumpido, libre de errores o que cumpla sus requisitos"
+" específicos. El uso del servicio es bajo su propio riesgo."
+
+#: app/templates/terms.html:23
+msgid "Your Data and Responsibility"
+msgstr "Sus datos y responsabilidad"
+
+#: app/templates/terms.html:24
+msgid ""
+"You are solely responsible for the accuracy and completeness of the "
+"expense data you enter. Expense Manager is a personal finance tracking "
+"tool and does not provide financial, tax, or legal advice. You should "
+"verify all financial records independently and consult qualified "
+"professionals when needed."
+msgstr ""
+"Usted es el único responsable de la exactitud e integridad de los datos "
+"de gastos que ingresa. Expense Manager es una herramienta de seguimiento "
+"de finanzas personales y no proporciona asesoramiento financiero, fiscal "
+"ni legal. Debe verificar todos los registros financieros de forma "
+"independiente y consultar a profesionales cualificados cuando sea "
+"necesario."
+
+#: app/templates/terms.html:28
+msgid "Prohibited Uses"
+msgstr "Usos prohibidos"
+
+#: app/templates/terms.html:29
+msgid "You agree not to use Expense Manager to:"
+msgstr "Acepta no utilizar Expense Manager para:"
+
+#: app/templates/terms.html:31
+msgid ""
+"Attempt to gain unauthorized access to the service or other users' "
+"accounts."
+msgstr ""
+"Intentar obtener acceso no autorizado al servicio o a las cuentas de "
+"otros usuarios."
+
+#: app/templates/terms.html:32
+msgid ""
+"Use the service for any unlawful purpose or in violation of applicable "
+"laws."
+msgstr ""
+"Utilizar el servicio con cualquier fin ilícito o en violación de las "
+"leyes aplicables."
+
+#: app/templates/terms.html:33
+msgid ""
+"Interfere with or disrupt the service infrastructure or other users' "
+"access."
+msgstr ""
+"Interferir o interrumpir la infraestructura del servicio o el acceso de "
+"otros usuarios."
+
+#: app/templates/terms.html:34
+msgid "Scrape, harvest, or collect data from the service without permission."
+msgstr "Extraer, recopilar o recoger datos del servicio sin permiso."
+
+#: app/templates/terms.html:35
+msgid ""
+"Share your account credentials with others or allow unauthorized use of "
+"your account."
+msgstr ""
+"Compartir sus credenciales de cuenta con otras personas o permitir el uso"
+" no autorizado de su cuenta."
+
+#: app/templates/terms.html:40
+#, fuzzy
+msgid "Account Termination"
+msgstr "Terminación de la cuenta"
+
+#: app/templates/terms.html:41
+msgid ""
+"We reserve the right to suspend or terminate your account at any time if "
+"you violate these Terms of Service or engage in prohibited activities. "
+"You may also delete your account at any time. Upon termination, your "
+"right to use the service ceases immediately, and your data will be "
+"deleted in accordance with our Privacy Policy."
+msgstr ""
+"Nos reservamos el derecho de suspender o cancelar su cuenta en cualquier "
+"momento si incumple estos Términos de Servicio o realiza actividades "
+"prohibidas. También puede eliminar su cuenta en cualquier momento. Tras "
+"la terminación, su derecho a utilizar el servicio cesa de inmediato y sus"
+" datos se eliminarán conforme a nuestra Política de Privacidad."
+
+#: app/templates/terms.html:45
+msgid "Changes to These Terms"
+msgstr "Cambios en estos términos"
+
+#: app/templates/terms.html:46
+msgid ""
+"We may update these Terms of Service from time to time. Continued use of "
+"the service after changes are posted constitutes acceptance of the "
+"revised terms. We encourage you to review this page periodically."
+msgstr ""
+"Podemos actualizar estos Términos de Servicio periódicamente. El uso "
+"continuado del servicio tras publicarse los cambios constituye la "
+"aceptación de los términos revisados. Le recomendamos revisar esta página"
+" periódicamente."
+
+#: app/templates/terms.html:51
+msgid ""
+"If you have questions about these Terms of Service, please contact us "
+"through the support channels provided in the application."
+msgstr ""
+"Si tiene preguntas sobre estos Términos de Servicio, contáctenos a través"
+" de los canales de soporte proporcionados en la aplicación."
+

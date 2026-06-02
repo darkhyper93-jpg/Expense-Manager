@@ -1,0 +1,21 @@
+<div class="lang-selector" id="langSelector">
+    <button type="button" class="lang-toggle" id="langToggle" aria-haspopup="listbox" aria-expanded="false">
+        <span class="lang-flag">{{ LANGUAGE_FLAGS[current_locale] }}</span>
+        <span class="lang-code">{{ current_locale.replace('_', '-') }}</span>
+        <span class="lang-chevron">▾</span>
+    </button>
+    <ul class="lang-menu" id="langMenu" role="listbox" aria-label="{{ _('Select language') }}">
+        {% for code, label in LANGUAGES.items() %}
+        <li role="option" aria-selected="{{ 'true' if code == current_locale else 'false' }}">
+            <a href="{{ url_for('language.set_language', lang=code, next=request.path) }}"
+               class="lang-option{% if code == current_locale %} active{% endif %}">
+                <span class="lang-flag">{{ LANGUAGE_FLAGS[code] }}</span>
+                <span class="lang-label">{{ label }}</span>
+                {% if code == current_locale %}
+                <span class="lang-check">✓</span>
+                {% endif %}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

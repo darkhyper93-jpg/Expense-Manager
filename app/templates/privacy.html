@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}{{ _('Privacy Policy') }} — {{ _('Expense Manager') }}{% endblock %}
+{% block main_class %}legal-page{% endblock %}
+
+{% block content %}
+<article class="legal-document">
+    <header class="legal-header">
+        <h1>{{ _('Privacy Policy') }}</h1>
+        <p class="subtitle">{{ _('Last updated: June 2, 2026') }}</p>
+    </header>
+
+    <section class="legal-section">
+        <h2>{{ _('Introduction') }}</h2>
+        <p>{{ _('This Privacy Policy explains how Expense Manager collects, uses, stores, and protects your personal information when you use our expense tracking service.') }}</p>
+    </section>
+
+    <section class="legal-section">
+        <h2>{{ _('Data We Collect') }}</h2>
+        <p>{{ _('When you use Expense Manager, we collect the following information:') }}</p>
+        <ul class="legal-list">
+            <li>{{ _('Account information: your email address, used for authentication and account identification.') }}</li>
+            <li>{{ _('Expense records: amounts, categories, descriptions, and dates of your financial transactions.') }}</li>
+            <li>{{ _('Custom categories: names, colors, and icons you create to organize your expenses.') }}</li>
+            <li>{{ _('Budget settings: monthly spending limits you configure for tracking purposes.') }}</li>
+        </ul>
+    </section>
+
+    <section class="legal-section">
+        <h2>{{ _('How We Store Your Data') }}</h2>
+        <p>{{ _('Your data is stored securely in Supabase, a cloud platform powered by PostgreSQL. All data is encrypted in transit using HTTPS and is logically isolated so each user can only access their own records.') }}</p>
+    </section>
+
+    <section class="legal-section">
+        <h2>{{ _('Data Sharing') }}</h2>
+        <p>{{ _('We do not sell, rent, or share your personal data with third parties for marketing or advertising purposes. Your expense data remains private and is used solely to provide the Expense Manager service to you.') }}</p>
+    </section>
+
+    <section class="legal-section">
+        <h2>{{ _('Your Rights and Data Deletion') }}</h2>
+        <p>{{ _('You have the right to access, export, and delete your data at any time. You may delete your account and all associated data — including expenses, categories, and budget settings — by contacting us. Upon deletion, all your personal data will be permanently removed from our systems.') }}</p>
+    </section>
+
+    <section class="legal-section">
+        <h2>{{ _('GDPR Compliance') }}</h2>
+        <p>{{ _('If you are located in the European Economic Area, you have additional rights under the General Data Protection Regulation (GDPR), including:') }}</p>
+        <ul class="legal-list">
+            <li>{{ _('The right to access your personal data.') }}</li>
+            <li>{{ _('The right to rectification of inaccurate data.') }}</li>
+            <li>{{ _('The right to erasure ("right to be forgotten").') }}</li>
+            <li>{{ _('The right to data portability.') }}</li>
+            <li>{{ _('The right to restrict or object to processing.') }}</li>
+        </ul>
+        <p>{{ _('We process your data based on your consent when you create an account and on the necessity of performing our service contract with you. We retain your data only for as long as your account is active.') }}</p>
+    </section>
+
+    <section class="legal-section">
+        <h2>{{ _('Contact Us') }}</h2>
+        <p>{{ _('If you have questions about this Privacy Policy or wish to exercise your data rights, please contact us through the support channels provided in the application.') }}</p>
+    </section>
+</article>
+{% endblock %}

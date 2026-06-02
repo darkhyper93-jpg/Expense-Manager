@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}{{ _('Terms of Service') }} — {{ _('Expense Manager') }}{% endblock %}
+{% block main_class %}legal-page{% endblock %}
+
+{% block content %}
+<article class="legal-document">
+    <header class="legal-header">
+        <h1>{{ _('Terms of Service') }}</h1>
+        <p class="subtitle">{{ _('Last updated: June 2, 2026') }}</p>
+    </header>
+
+    <section class="legal-section">
+        <h2>{{ _('Acceptance of Terms') }}</h2>
+        <p>{{ _('By creating an account or using Expense Manager, you agree to these Terms of Service. If you do not agree, please do not use the service.') }}</p>
+    </section>
+
+    <section class="legal-section">
+        <h2>{{ _('Service Provided As-Is') }}</h2>
+        <p>{{ _('Expense Manager is provided "as is" and "as available" without warranties of any kind, whether express or implied. We do not guarantee that the service will be uninterrupted, error-free, or meet your specific requirements. Use of the service is at your own risk.') }}</p>
+    </section>
+
+    <section class="legal-section">
+        <h2>{{ _('Your Data and Responsibility') }}</h2>
+        <p>{{ _('You are solely responsible for the accuracy and completeness of the expense data you enter. Expense Manager is a personal finance tracking tool and does not provide financial, tax, or legal advice. You should verify all financial records independently and consult qualified professionals when needed.') }}</p>
+    </section>
+
+    <section class="legal-section">
+        <h2>{{ _('Prohibited Uses') }}</h2>
+        <p>{{ _('You agree not to use Expense Manager to:') }}</p>
+        <ul class="legal-list">
+            <li>{{ _('Attempt to gain unauthorized access to the service or other users\' accounts.') }}</li>
+            <li>{{ _('Use the service for any unlawful purpose or in violation of applicable laws.') }}</li>
+            <li>{{ _('Interfere with or disrupt the service infrastructure or other users\' access.') }}</li>
+            <li>{{ _('Scrape, harvest, or collect data from the service without permission.') }}</li>
+            <li>{{ _('Share your account credentials with others or allow unauthorized use of your account.') }}</li>
+        </ul>
+    </section>
+
+    <section class="legal-section">
+        <h2>{{ _('Account Termination') }}</h2>
+        <p>{{ _('We reserve the right to suspend or terminate your account at any time if you violate these Terms of Service or engage in prohibited activities. You may also delete your account at any time. Upon termination, your right to use the service ceases immediately, and your data will be deleted in accordance with our Privacy Policy.') }}</p>
+    </section>
+
+    <section class="legal-section">
+        <h2>{{ _('Changes to These Terms') }}</h2>
+        <p>{{ _('We may update these Terms of Service from time to time. Continued use of the service after changes are posted constitutes acceptance of the revised terms. We encourage you to review this page periodically.') }}</p>
+    </section>
+
+    <section class="legal-section">
+        <h2>{{ _('Contact Us') }}</h2>
+        <p>{{ _('If you have questions about these Terms of Service, please contact us through the support channels provided in the application.') }}</p>
+    </section>
+</article>
+{% endblock %}
