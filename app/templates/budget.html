@@ -55,12 +55,12 @@
                 <div class="budget-footer">
                     <span>
                         {% if item.status == 'exceeded' %}
-                            {{ _('Over budget by $%(amount)s') % {'amount': '%.2f'|format(item.spent - item.limit)} }}
-                        {% elif item.status == 'warning' %}
-                            {{ _('%(pct)s%% used — approaching limit') % {'pct': '%.1f'|format(item.pct)} }}
+                            {{ _('Over budget by') }} ${{ "%.2f"|format(item.spent - item.limit) }}
+                         {% elif item.status == 'warning' %}
+                            {{ "%.1f"|format(item.pct) }}% {{ _('used — approaching limit') }}
                         {% else %}
-                            {{ _('$%(amount)s remaining') % {'amount': '%.2f'|format(item.remaining)} }}
-                        {% endif %}
+                             ${{ "%.2f"|format(item.remaining) }} {{ _('remaining') }}
+                         {% endif %}
                     </span>
                     <form method="POST"
                           action="{{ url_for('budget.delete_budget', budget_id=item.id) }}"

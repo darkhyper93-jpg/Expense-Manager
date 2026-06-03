@@ -47,7 +47,7 @@
                 {% if cat.name != 'Other' %}
                 <form method="POST"
                       action="{{ url_for('categories.delete_category', category_id=cat.id) }}"
-                      data-confirm="{{ _('Delete \"%(name)s\"? Expenses will be moved to Other.') % {'name': translate_category(cat.name)} }}">
+                      data-confirm="{{ _('Delete') }} &quot;{{ translate_category(cat.name) }}&quot;? {{ _('Expenses will be moved to Other.') }}">
                     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                     <button type="submit" class="btn btn-danger btn-sm">{{ _('Delete') }}</button>
                 </form>
