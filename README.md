@@ -1,128 +1,50 @@
-Build a full-stack personal expense manager web app with the following specifications:
+# Expense Manager
 
-## STACK
-- Backend: Python + Flask
-- Database: Supabase (PostgreSQL)
-- Frontend: HTML + CSS + JavaScript (Jinja2 templates)
-- Charts: Chart.js
-- Hosting: Cloudflare Pages (frontend) + Railway or Render (backend)
-- Auth: Supabase Auth (email/password)
+Gestor de gastos personales para la web. Cada usuario registra sus gastos, los ordena por categoría, fija presupuestos mensuales y ve en un panel cuánto lleva gastado.
 
-## DATABASE SCHEMA (Supabase)
+## Qué hace
 
-Table: users
-- id (uuid, primary key, auto)
-- email (text, unique)
-- created_at (timestamp)
+- **Cuenta propia:** registro e inicio de sesión con correo y contraseña (Supabase Auth). Cada usuario ve solo sus datos.
+- **Panel:** lo gastado este mes y este año, el presupuesto que queda, gastos por mes de los últimos seis meses, reparto por categoría del mes actual y los últimos movimientos.
+- **Gastos:** alta, edición y borrado, con filtros por fechas y categoría y búsqueda por descripción.
+- **Categorías:** propias, con nombre, color e ícono, además de las de serie.
+- **Presupuestos:** mensual global o por categoría, con aviso al pasar el 80 % y al superar el 100 %.
+- **Exportar** los gastos a CSV, filtrados por fechas.
+- **Seis idiomas:** español, inglés, portugués de Brasil, francés, alemán e italiano (Flask-Babel). Se detecta el del navegador y se puede cambiar desde el menú.
+- Interfaz oscura, adaptada a celular y escritorio, con protección CSRF en todos los formularios.
 
-Table: expenses
-- id (uuid, primary key, auto)
-- user_id (uuid, foreign key → users.id)
-- amount (float, not null)
-- category (text, not null)
-- description (text)
-- date (date, not null)
-- created_at (timestamp)
+## Tecnología
 
-Table: categories
-- id (uuid, primary key, auto)
-- user_id (uuid, foreign key → users.id)
-- name (text, not null)
-- color (text) → hex color for charts
-- icon (text) → emoji or icon name
+Python con Flask (blueprints y plantillas Jinja2), Supabase (PostgreSQL y autenticación), Chart.js para los gráficos y Gunicorn para producción.
 
-## FEATURES
+## Ponerlo en marcha
 
-1. Auth
-   - Register with email/password
-   - Login/logout
-   - Protected routes (redirect to login if not authenticated)
-   - Session handling with Flask session
+1. Crear un proyecto en [Supabase](https://supabase.com) y ejecutar `supabase/schema.sql` en su editor SQL.
+2. Copiar `.env.example` como `.env` y completar las claves del proyecto y una `FLASK_SECRET_KEY` cualquiera.
+3. Instalar y arrancar:
 
-2. Dashboard (home after login)
-   - Total spent this month
-   - Total spent this year
-   - Remaining budget (if budget is set)
-   - Bar chart: expenses by month (last 6 months)
-   - Pie chart: expenses by category (current month)
-   - Last 5 transactions listed
+```bash
+pip install -r requirements.txt
+python run.py
+```
 
-3. Expenses
-   - Add expense: amount, category, description, date
-   - Edit expense
-   - Delete expense
-   - List all expenses with filters: by date range, by category
-   - Search by description
+La aplicación queda en http://localhost:5000.
 
-4. Categories
-   - Create custom categories with name and color
-   - Default categories: Food, Transport, Entertainment, Health, Education, Other
-   - Delete category (reassign expenses to "Other")
+**Producción:** el `Procfile` arranca la aplicación con Gunicorn, listo para Render o Railway. Las variables de entorno se cargan en el panel del servicio, nunca en el repositorio.
 
-5. Budget
-   - Set monthly budget per category or global
-   - Visual indicator when approaching or exceeding budget (yellow > 80%, red > 100%)
+## Estructura
 
-6. Export
-   - Export expenses to CSV filtered by date range
+```
+app/
+  app.py              aplicación y registro de blueprints
+  routes/             auth, dashboard, expenses, categories, budget, language, legal
+  templates/          páginas Jinja2
+  static/             estilos y scripts (gráficos)
+  translations/       los cinco idiomas además del inglés
+supabase/schema.sql   tablas e índices
+docs/especificacion/  la especificación original: aplicación, interfaz e idiomas
+```
 
-## FLASK PROJECT STRUCTURE
-/app
-/static
-/css → styles.css
-/js → charts.js, main.js
-/templates
-base.html
-login.html
-register.html
-dashboard.html
-expenses.html
-categories.html
-budget.html
-/routes
-auth.py
-expenses.py
-categories.py
-budget.py
-dashboard.py
-config.py
-app.py
-supabase_client.py
+---
 
-## SECURITY REQUIREMENTS
-- All routes protected with login_required decorator
-- User can only access their own data (filter all queries by user_id)
-- Input validation on all forms (server-side)
-- Environment variables for Supabase keys (never hardcoded)
-- CSRF protection on all forms
-- Passwords handled entirely by Supabase Auth (never stored manually)
-
-## UI/UX REQUIREMENTS
-- Responsive design (mobile + desktop)
-- Clean, minimal dark or light theme (user toggle)
-- Loading states on async operations
-- Success/error toast notifications
-- Empty states with helpful messages when no data exists
-- Confirm dialog before deleting anything
-
-## ENVIRONMENT VARIABLES NEEDED
-SUPABASE_URL=
-SUPABASE_ANON_KEY=
-SUPABASE_SERVICE_ROLE_KEY=
-FLASK_SECRET_KEY=
-FLASK_ENV=development
-
-## IMPLEMENTATION ORDER
-1. Set up Flask app and Supabase connection
-2. Implement auth (register, login, logout, session)
-3. Create database tables in Supabase
-4. Implement expense CRUD
-5. Implement categories
-6. Build dashboard with Chart.js
-7. Implement budget tracking
-8. Add CSV export
-9. Polish UI and add responsiveness
-10. Deploy to Render + Cloudflare
-
-Generate clean, well-commented code. Use Flask blueprints for route organization. 
-Handle all Supabase errors gracefully. Follow Python PEP8 style conventions.
+**In English:** a personal expense tracker built with Flask and Supabase. Users log expenses, organize them into categories, set monthly budgets (global or per category) with 80 % and 100 % alerts, browse a dashboard with Chart.js charts and export to CSV. Available in six languages. Setup: run `supabase/schema.sql`, fill `.env` from `.env.example`, then `pip install -r requirements.txt` and `python run.py`.
